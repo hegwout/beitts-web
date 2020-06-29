@@ -50,3 +50,9 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+.buildpath
+.project
+app.yaml
+composer.lock
+symfony.lock
+.settings/org.eclipse.wst.validation.prefs
