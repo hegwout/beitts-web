@@ -111,44 +111,6 @@ class DefaultController extends AbstractController
             'url' => "http://tts.heoffice.com/" . $url
         ]);
     }
-    function upload_object($bucketName, $objectName, $source)
-    {
-        // $storage = new StorageClient();
-        $projectId = 'pro-icon-253402';
-
-        $storage = new StorageClient([
-            'projectId' => $projectId
-        ]);
-        
-        # The name for the new bucket
-        //$bucketName = 'my-new-bucket';
-        
-        # Creates the new bucket
-        //$bucket = $storage->createBucket($bucketName);
-
-        $file = fopen($source, 'r');
-        $bucket = $storage->bucket($bucketName);
-        $object = $bucket->upload($file, [
-            'name' => $objectName
-        ]);
-        //printf('Uploaded %s to gs://%s/%s' . PHP_EOL, basename($source), $bucketName, $objectName);
-    }
-
-    function create_budget(){
-        $projectId = 'pro-icon-253402';
-
-        # Instantiates a client
-        $storage = new StorageClient([
-            'projectId' => $projectId
-        ]);
-
-        # The name for the new bucket
-        $bucketName = 'pro-icon-253402-tts';
-
-        # Creates the new bucket
-        $bucket = $storage->createBucket($bucketName);
-
-        echo 'Bucket ' . $bucket->name() . ' created.';
-    }
+ 
     
 }
