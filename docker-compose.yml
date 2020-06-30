@@ -6,3 +6,5 @@ services:
         # mem_limit: 8192m
         ports:
             - "9090:80" 
+        volumes:
+            - "./:/var/www/html"

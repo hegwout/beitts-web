@@ -11,8 +11,8 @@ RUN apk update \
 
 COPY ./docker/bin/run.sh /opt/bin/run.sh
 COPY ./docker/conf/prod/default.conf /etc/nginx/conf.d/default.conf
-COPY . /var/www/html
+#COPY . /var/www/html
 
 RUN chmod -R 777 /var/www/html
-
+WORKDIR /var/www/html 
 CMD ["/opt/bin/run.sh"]
